@@ -18,6 +18,7 @@
 		B9597BBC2A2C900500AEE5B8 /* post.json in Resources */ = {isa = PBXBuildFile; fileRef = B9597BBB2A2C900500AEE5B8 /* post.json */; };
 		B9597BBE2A2C905A00AEE5B8 /* GetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9597BBD2A2C905A00AEE5B8 /* GetView.swift */; };
 		B9597BC02A2C933B00AEE5B8 /* get.json in Resources */ = {isa = PBXBuildFile; fileRef = B9597BBF2A2C933B00AEE5B8 /* get.json */; };
+		B9597BC22A2C9AFF00AEE5B8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B9597BC12A2C9AFF00AEE5B8 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B9597BBB2A2C900500AEE5B8 /* post.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = post.json; sourceTree = "<group>"; };
 		B9597BBD2A2C905A00AEE5B8 /* GetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetView.swift; sourceTree = "<group>"; };
 		B9597BBF2A2C933B00AEE5B8 /* get.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get.json; sourceTree = "<group>"; };
+		B9597BC12A2C9AFF00AEE5B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		B9597B8E2A2B632800AEE5B8 = {
 			isa = PBXGroup;
 			children = (
+				B9597BC12A2C9AFF00AEE5B8 /* README.md */,
 				B9597B992A2B632800AEE5B8 /* PSNetworkVaporExampleApp */,
 				B9597B982A2B632800AEE5B8 /* Products */,
 				B9597BA82A2B685800AEE5B8 /* Frameworks */,
@@ -164,6 +167,7 @@
 			files = (
 				B9597BC02A2C933B00AEE5B8 /* get.json in Resources */,
 				B9597BA22A2B632900AEE5B8 /* Preview Assets.xcassets in Resources */,
+				B9597BC22A2C9AFF00AEE5B8 /* README.md in Resources */,
 				B9597B9F2A2B632900AEE5B8 /* Assets.xcassets in Resources */,
 				B9597BBC2A2C900500AEE5B8 /* post.json in Resources */,
 			);

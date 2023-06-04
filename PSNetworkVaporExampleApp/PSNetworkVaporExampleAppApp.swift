@@ -18,7 +18,7 @@ struct PSNetworkVaporExampleAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: .init(manager: networkManager))
+            ContentView()
                 .environmentObject(networkManager)
         }
     }

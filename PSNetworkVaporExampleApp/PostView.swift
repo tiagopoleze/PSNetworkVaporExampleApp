@@ -13,9 +13,11 @@ struct PostView: View {
     @EnvironmentObject private var manager: PSNetwork.NetworkManager
     @Binding private var text: String
     @State private var postOutput: PostOutput?
+    private let isMocked: Bool
 
-    init(text: Binding<String>) {
+    init(text: Binding<String>, isMocked: Bool = false) {
         _text = text
+        self.isMocked = isMocked
     }
 
     var body: some View {
@@ -27,11 +29,46 @@ struct PostView: View {
             do {
                 var request = PostRequest()
                 request.bodyParameter = .init(name: text)
-                postOutput = try await manager.request(request)
+
+                if isMocked {
+                    let networkExchange: PSNetwork.Mock.NetworkExchange<PostOutput>
+                    networkExchange = MyMockable.mockNetworkExchange(
+                        request: try request.urlRequest(),
+                        statusCode: .ok,
+                        mockData: PostOutputMocked(rawValue: "post.json")!)
+                    postOutput = networkExchange.response?.data
+
+                } else {
+                    postOutput = try await manager.request(request)
+                }
             } catch {
                 print(error.localizedDescription)
             }
         }
         .navigationTitle("Post Request")
+    }
+}
+
+struct MyMockable: Mockable {}
+extension PostOutput: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self)
+    }
+
+    public static func == (lhs: PostOutput, rhs: PostOutput) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+struct PostOutputMocked: MockableData {
+    var rawValue: String
+
+    public typealias ReturnType = PostOutput
+    public typealias RawValue = String
+
+    public var bundle: Bundle { .main }
+    public var error: PSNetwork.Error? { nil }
+
+    init?(rawValue: String) {
+        self.rawValue = rawValue
     }
 }

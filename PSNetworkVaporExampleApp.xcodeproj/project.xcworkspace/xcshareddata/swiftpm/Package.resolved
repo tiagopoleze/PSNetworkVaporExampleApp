@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "psnetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tiagopoleze/PSNetwork",
+      "state" : {
+        "branch" : "main",
+        "revision" : "51054836edb58d8ca9efba42f281c0261ff45013"
+      }
+    },
+    {
+      "identity" : "psnetworkvaporsharedlibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tiagopoleze/PSNetworkVaporSharedLibrary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9954ecabc26cbcbac0ec541a58e19ada6602dbb8"
+      }
+    }
+  ],
+  "version" : 2
+}

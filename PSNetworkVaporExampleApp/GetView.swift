@@ -50,7 +50,7 @@ struct GetView: View {
         }
         .padding()
         .task {
-            var request = GetRequest()
+            let request = GetRequest()
             do {
                 if isMocked {
                     let network: PSNetwork.Mock.NetworkExchange<GetOutput>
